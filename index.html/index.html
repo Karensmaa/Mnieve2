@@ -3,26 +3,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Snowman – A-Frame</title>
+  <title>Snowman – A-Frame (sin piso)</title>
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 </head>
 <body>
   <a-scene renderer="colorManagement: true; physicallyCorrectLights: true">
     <!-- Luces -->
     <a-entity light="type: ambient; intensity: 0.6"></a-entity>
-    <a-entity light="type: directional; intensity: 0.9; castShadow: true" position="1 2 -1"></a-entity>
+    <a-entity light="type: directional; intensity: 0.9" position="1 2 -1"></a-entity>
 
     <!-- Cámara -->
     <a-entity position="0 1.6 0">
       <a-camera></a-camera>
     </a-entity>
 
-    <!-- Muñeco de nieve (z = -3) -->
+    <!-- Muñeco de nieve (flotando) -->
     <a-entity id="snowman" position="0 0 -3">
       <!-- Cuerpo -->
-      <a-sphere radius="0.60" color="#FFFFFF" position="0 0.60 0" shadow="cast: true"></a-sphere>
-      <a-sphere radius="0.40" color="#FFFFFF" position="0 1.10 0" shadow="cast: true"></a-sphere>
-      <a-sphere radius="0.30" color="#FFFFFF" position="0 1.50 0" shadow="cast: true"></a-sphere>
+      <a-sphere radius="0.60" color="#FFFFFF" position="0 0.60 0"></a-sphere>
+      <a-sphere radius="0.40" color="#FFFFFF" position="0 1.10 0"></a-sphere>
+      <a-sphere radius="0.30" color="#FFFFFF" position="0 1.50 0"></a-sphere>
 
       <!-- Ojos -->
       <a-sphere radius="0.03" color="#111111" position="-0.08 1.56 0.28"></a-sphere>
@@ -53,16 +53,8 @@
                position="0 1.35 0" rotation="90 0 0"></a-torus>
     </a-entity>
 
-    <!-- Base/piso: misma Z del muñeco (z = -3) -->
-    <a-plane position="0 0 -3"
-             rotation="-90 0 0"
-             width="10" height="10"
-             color="#7BC8A4"
-             shadow="receive: true"></a-plane>
-
     <!-- Cielo -->
     <a-sky color="#071c42"></a-sky>
   </a-scene>
 </body>
 </html>
-
